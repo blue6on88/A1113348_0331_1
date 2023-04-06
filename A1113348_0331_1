@@ -1,0 +1,157 @@
+import java.util.*;
+
+class Animal{
+    String name;
+    double height;
+    int weight;
+    int speed;
+
+    Animal(String initName, double initHeight, int initWeight, int initSpeed){
+        this.name = initName;
+        this.height = initHeight;
+        this.weight = initWeight;
+        this.speed = initSpeed;
+    }
+
+    void show(){
+        System.out.println("姓名:"+this.name);
+        System.out.println("身高:"+this.height);
+        System.out.println("體重:"+this.weight);
+        System.out.println("速度:"+this.speed);
+    }
+
+    double distance(int x, double y){
+        return (x*y*this.speed);
+    }
+
+    int distance(int x){
+        return (x*this.speed);
+    }
+
+    static void showinfo(){
+        System.out.println("歡迎進入冰雪奇緣系統");
+    }
+}
+
+class Human extends Animal{
+    String sex;
+
+    Human(String initName, double initHeight, int initWeight, int initSpeed, String initsex){
+        super(initName, initHeight, initWeight, initSpeed);
+        this.sex = initsex;
+    }
+
+    void show(){
+        super.show();
+        System.out.println("性別:"+this.sex);
+    }
+}
+
+class Snow extends Human{
+    String skill;
+
+    Snow(String initName, double initHeight, int initWeight, int initSpeed, String initsex, String initSkill){
+        super(initName, initHeight, initWeight, initSpeed, initsex);
+        this.skill = initSkill;
+    }
+    
+    void show(){
+        super.show();
+        System.out.println("冰凍技能:"+skill);
+    }
+
+    double distance(int x, double y){
+        return x*y*this.speed*2;
+    }
+
+    int distance(int x){
+        return x*speed*2;
+    }
+}
+
+
+public class A1113348_0331_1{
+    public static void main(String[] args) {
+        int x;
+        double y;
+
+        Animal.showinfo();
+        Animal role1 = new Animal("雪寶",1.1, 52, 100 );
+        Animal role2 = new Animal("驢子",1.5, 99, 200 );
+        Human role3 = new Human("阿克", 1.9, 80, 150, "男");
+        Human role4 = new Human("漢斯", 1.8, 78, 130, "男");
+        Human role5 = new Human("安那", 1.7, 48, 180, "女");
+        Snow role6 = new Snow("愛沙", 1.7, 50, 120, "女", "Yes");
+
+        role1.show();
+        System.out.print("請輸入x(時間):");
+        Scanner sc = new Scanner(System.in);
+        x = sc.nextInt();
+        System.out.print("請輸入y(加速度),如果沒有請填0:");
+        y = sc.nextDouble();
+        if(y==0){
+            System.out.println(role1.name+"的奔跑距離為:"+role1.distance(x));
+        }
+        else{
+            System.out.println(role1.name+"的奔跑距離為:"+role1.distance(x,y));
+        }
+        
+        role2.show();
+        System.out.print("請輸入x(時間):");
+        x = sc.nextInt();
+        System.out.print("請輸入y(加速度),如果沒有請填0:");
+        y = sc.nextDouble();
+        if(y==0){
+            System.out.println(role2.name+"的奔跑距離為:"+role2.distance(x));
+        }
+        else{
+            System.out.println(role2.name+"的奔跑距離為:"+role2.distance(x,y));
+        }
+        
+        role3.show();
+        System.out.print("請輸入x(時間):");
+        x = sc.nextInt();
+        System.out.print("請輸入y(加速度),如果沒有請填0:");
+        y = sc.nextDouble();
+        if(y==0){
+            System.out.println(role3.name+"的奔跑距離為:"+role3.distance(x));
+        }
+        else{
+            System.out.println(role3.name+"的奔跑距離為:"+role3.distance(x,y));
+        }
+        role4.show();
+        System.out.print("請輸入x(時間):");
+        x = sc.nextInt();
+        System.out.print("請輸入y(加速度),如果沒有請填0:");
+        y = sc.nextDouble();
+        if(y==0){
+            System.out.println(role4.name+"的奔跑距離為:"+role4.distance(x));
+        }
+        else{
+            System.out.println(role4.name+"的奔跑距離為:"+role4.distance(x,y));
+        }
+        role5.show();
+        System.out.print("請輸入x(時間):");
+        x = sc.nextInt();
+        System.out.print("請輸入y(加速度),如果沒有請填0:");
+        y = sc.nextDouble();
+        if(y==0){
+            System.out.println(role5.name+"的奔跑距離為:"+role5.distance(x));
+        }
+        else{
+            System.out.println(role5.name+"的奔跑距離為:"+role5.distance(x,y));
+        }
+        role6.show();
+        System.out.print("請輸入x(時間):");
+        x = sc.nextInt();
+        System.out.print("請輸入y(加速度),如果沒有請填0:");
+        y = sc.nextDouble();
+        if(y==0){
+            System.out.println(role6.name+"的奔跑距離為:"+role6.distance(x));
+        }
+        else{
+            System.out.println(role6.name+"的奔跑距離為:"+role6.distance(x,y));
+        }
+        
+    }
+}
